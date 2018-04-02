@@ -1,5 +1,6 @@
 import Base64 from './base64'
 const base64 = new Base64();
+import mimo from 'mimo'
 export default = {
     formatMoney(money, deci) {
         return money.toFixed(deci || 2)
@@ -214,6 +215,13 @@ export default = {
 
         scriptObj.onload = function() {
         document.body.removeChild(scriptObj)
+    },
+    //不满10的补零
+    addPreZero(num){
+     return ('0'+num).slice(-2);
+    },
+    //日期格式化
+    dateFormat(date) {
+        return new mimo(date);
     }
-}
 }
