@@ -223,5 +223,34 @@ export default = {
     //日期格式化
     dateFormat(date) {
         return new mimo(date);
+    },
+    //比较连个数据是否相等
+    compareData(eleA, eleB){
+        return toString(eleA) === toString(eleB);
+    },
+    _toString(obj){
+        let result = null;
+        if(Object.prototype.toString.call(obj) === "[object Array]"){
+            result = [];
+            result = obj.map(item => {
+                return toString(item)
+            })
+        }else if(Object.prototype.toString.call(obj) === "[object Null]"){
+            result = JSON.stringify(obj);
+        }else if(typeof obj === 'object'){
+            result = {}
+            for(let key in obj){
+                result[key] = toString(obj[key])
+            }
+        }else if(typeof obj === 'function'){
+            result = obj.toString();
+        }else if(typeof obj === "undefined"){
+            result = obj;
+        }else if(typeof obj === "symbol"){
+            result = obj.toString();
+        }else{
+            result = JSON.stringify(obj);
+        }
+        return JSON.stringify(result);
     }
 }
