@@ -42,7 +42,11 @@ let date = dateFormat(new Date())
 console.log(date.formatAll()) //默认分隔符为‘-’，2018-04-02 15-34-13
 console.log(date.formatDate('/'))//2018/04/02
 console.log(date.formatTime(':'))//15:34:05
+```
+以上三个的参数都是分隔符，默认为‘-’
+```
 console.log(date.format('MM-DD'))//04-02，可以自由组合，标准为‘YYYY-MM-DD hh:mm:ss’
 ```
+这个方法可以任意组合年月日时分秒，注意必须要使用（YYYY-MM-DD hh:mm:ss）这些标识符，至于中间的分隔符或者顺序或者是否显示某个都由你自己决定。
 13.compareData
 compareData(dataA, dataB),比较连个数据是否相等，可以是任意嵌套复杂型，Symbol和function转化为字符串如果一致则视为相同。
