@@ -1,10 +1,7 @@
 import Base64 from './base64'
 const base64 = new Base64();
-import mimo from 'mimo'
-export default = {
-    formatMoney(money, deci) {
-        return money.toFixed(deci || 2)
-    },
+import mimo from './mimo'
+export default {
     clone(data) {
         return JSON.parse(JSON.stringify(data));
     },
@@ -81,7 +78,7 @@ export default = {
     //是否是整数
     isInt(num) {
         return (num + '').indexOf('.') < 0;
-    }
+    },
     //解析url参数
     queryUrl() {
         let url = window.location.href;
@@ -214,11 +211,12 @@ export default = {
         document.body.appendChild(scriptObj);
 
         scriptObj.onload = function() {
-        document.body.removeChild(scriptObj)
+            document.body.removeChild(scriptObj)
+        }
     },
     //不满10的补零
-    addPreZero(num){
-     return ('0'+num).slice(-2);
+    addPreZero(num) {
+        return ('0'+num).slice(-2);
     },
     //日期格式化
     dateFormat(date) {

@@ -25,7 +25,7 @@ isInt(number)判断是否是整数
 解析当前url的参数，并返回参数对象
 6.toThousands
 toThousands(number)转化数字为千分位
-7.calAdd/calReduce/calMul
+7.calcAdd/calcReduce/calcMul
 参数均为两个，精确计算两个数字加减乘。
 8.formatKeyDown
 formatKeyDown(inputValue),保证输入的内容为数字，包括小数
