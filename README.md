@@ -1,5 +1,8 @@
 # zlib
 a small library help our project
+```
+npm install s-zlib
+```
 ### 接口
 ##### 1.clone
 clone(date: any)，浅拷贝数据
