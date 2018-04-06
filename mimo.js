@@ -1,12 +1,12 @@
-function addPreZero(num){
-    return ('0'+num).slice(-2);
-}
 export default class mimo {
     constructor(date){
         if(!this._isDate(date)){
             throw new Error('please use Date object')
         }
         this.date = date;
+    }
+    _addPreZero(num){
+        return ('0'+num).slice(-2);
     }
     _isDate(input) {
         return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
@@ -15,22 +15,22 @@ export default class mimo {
         let date = this.date;
         return {
             year: date.getFullYear(),
-            month: addPreZero(date.getMonth()+1),
-            day: addPreZero(date.getDate()),
-            hour: addPreZero(date.getHours()),
-            minute: addPreZero(date.getMinutes()),
-            second: addPreZero(date.getSeconds())
+            month: this._addPreZero(date.getMonth()+1),
+            day: this._addPreZero(date.getDate()),
+            hour: this._addPreZero(date.getHours()),
+            minute: this._addPreZero(date.getMinutes()),
+            second: this._addPreZero(date.getSeconds())
         }
     }
     _getTplObj(){
         let date = this.date;
         return {
             YYYY: date.getFullYear(),
-            MM: addPreZero(date.getMonth()+1),
-            DD: addPreZero(date.getDate()),
-            hh: addPreZero(date.getHours()),
-            mm: addPreZero(date.getMinutes()),
-            ss: addPreZero(date.getSeconds())
+            MM: this._addPreZero(date.getMonth()+1),
+            DD: this._addPreZero(date.getDate()),
+            hh: this._addPreZero(date.getHours()),
+            mm: this._addPreZero(date.getMinutes()),
+            ss: this._addPreZero(date.getSeconds())
         }
     }
     formatAll(split){
